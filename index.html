@@ -1,2 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAR EDIT - Epic Car Showcase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <title>My Website Name</title>
+<meta name="content="Professional services, quality solutions, and trusted expertise. Visit our website to learn more about our products and services.> <content=''Car Showcase></content>
+    <div class="particles"></div>
+    <div class="cursor-glow"></div>
+    <div class="wallpaper-selector">
+        <button class="theme-btn" data-theme="dark">Dark</button>
+        <button class="theme-btn" data-theme="neon">Neon</button>
+        <button class="theme-btn" data-theme="sunset">Sunset</button>
+        <button class="theme-btn" data-theme="ocean">Ocean</button>
+        <button class="theme-btn" data-theme="purple">Purple</button>
+    </div>
+    <div class="card-centre">
+        <div class="hero">
+            <h1>Epic Car Showcase</h1>
+            <p>Experience a premium collection of hypercars, cinematic lighting, and AI-driven design. Every model feels ultra-real, lavish, and ready for the show.</p>
+        </div>
+        <div class="container">
+            <div class="card-wrapper" onclick="goToCarDetail('BMW')">
+                <div class="card img1"></div>
+                <div class="card-info">
+                    <div class="animated-name">BMW</div>
+                    <p class="car-specs">Pure Performance</p>
+                </div>
+            </div>
+            <div class="card-wrapper" onclick="goToCarDetail('Ferrari')">
+                <div class="card img2"></div>
+                <div class="card-info">
+                    <div class="animated-name">Ferrari</div>
+                    <p class="car-specs">Italian Legend</p>
+                </div>
+            </div>
+            <div class="card-wrapper" onclick="goToCarDetail('Lamborghini')">
+                <div class="card img3"></div>
+                <div class="card-info">
+                    <div class="animated-name">Lamborghini</div>
+                    <p class="car-specs">Pure Adrenaline</p>
+                </div>
+            </div>
+            <div class="card-wrapper" onclick="goToCarDetail('Porsche')">
+                <div class="card img4"></div>
+                <div class="card-info">
+                    <div class="animated-name">Porsche</div>
+                    <p class="car-specs">German Engineering</p>
+                </div>
+            </div>
+            <div class="card-wrapper" onclick="goToCarDetail('Tesla')">
+                <div class="card img5"></div>
+                <div class="card-info">
+                    <div class="animated-name">Tesla</div>
+                    <p class="car-specs">Future of Speed</p>
+                </div>
+            </div>
+            <div class="card-wrapper" onclick="goToCarDetail('Mercedes')">
+                <div class="card img6"></div>
+                <div class="card-info">
+                    <div class="animated-name">Mercedes</div>
+                    <p class="car-specs">Luxury Class</p>
+                </div>
+            </div>
+            <div class="card-wrapper" onclick="goToCarDetail('Audi')">
+                <div class="card img7"></div>
+                <div class="card-info">
+                    <div class="animated-name">Audi</div>
+                    <p class="car-specs">Precision Tech</p>
+                </div>
+            </div>
+            <div class="card-wrapper" onclick="goToCarDetail('McLaren')">
+                <div class="card img8"></div>
+                <div class="card-info">
+                    <div class="animated-name">McLaren</div>
+                    <p class="car-specs">Race Born</p>
+                </div>
+            </div>
+            <div class="card-wrapper" onclick="goToCarDetail('Bugatti')">
+                <div class="card img9"></div>
+                <div class="card-info">
+                    <div class="animated-name">Bugatti</div>
+                    <p class="car-specs">Ultimate Speed</p>
+                </div>
+            </div>
+            <div class="card-wrapper" onclick="goToCarDetail('Rolls-Royce')">
+                <div class="card img10"></div>
+                <div class="card-info">
+                    <div class="animated-name">Rolls-Royce</div>
+                    <p class="car-specs">Opulent Cruiser</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="website-links">
+            <a href="https://www.tesla.com" target="_blank">Tesla <span>→</span></a>
+            <a href="https://www.mercedes-benz.com" target="_blank">Mercedes <span>→</span></a>
+            <a href="https://www.bmw.com" target="_blank">BMW <span>→</span></a>
+            <a href="https://www.ferrari.com" target="_blank">Ferrari <span>→</span></a>
+            <a href="https://www.lamborghini.com" target="_blank">Lamborghini <span>→</span></a>
+            <a href="https://www.porsche.com" target="_blank">Porsche <span>→</span></a>
+            <a href="https://www.audi.com" target="_blank">Audi <span>→</span></a>
+            <a href="https://www.mclaren.com" target="_blank">McLaren <span>→</span></a>
+            <a href="https://www.bugatti.com" target="_blank">Bugatti <span>→</span></a>
+            <a href="https://www.rolls-roycemotorcars.com" target="_blank">Rolls-Royce <span>→</span></a>
+            <a href="https://unsplash.com/s/photos/car-wallpaper" target="_blank">Unsplash Car Wallpapers <span>→</span></a>
+        </div>
+    </div>
+
+    <script>
+        // Theme selector
+        const themeButtons = document.querySelectorAll('.theme-btn');
+        const body = document.body;
+        const cursorGlow = document.querySelector('.cursor-glow');
+
+        const savedTheme = localStorage.getItem('selectedTheme') || 'dark';
+        body.setAttribute('data-theme', savedTheme);
+        updateActiveButton(savedTheme);
+
+        function createParticles() {
+            const particlesContainer = document.querySelector('.particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 3 + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        document.addEventListener('mousemove', (e) => {
+            cursorGlow.style.left = e.clientX + 'px';
+            cursorGlow.style.top = e.clientY + 'px';
+            cursorGlow.style.opacity = '1';
+        });
+
+        document.addEventListener('mouseleave', () => {
+            cursorGlow.style.opacity = '0';
+        });
+
+        themeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const theme = btn.getAttribute('data-theme');
+                body.setAttribute('data-theme', theme);
+                localStorage.setItem('selectedTheme', theme);
+                updateActiveButton(theme);
+            });
+        });
+
+        function updateActiveButton(theme) {
+            themeButtons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-theme') === theme) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        createParticles();
+
+        // Car details navigation
+        function goToCarDetail(carBrand) {
+            localStorage.setItem('selectedBrand', carBrand);
+            window.location.href = 'car-detail.html';
+        }
+
+        // AI Car Generator
+        const carNameInput = document.getElementById('carName');
+        const carTypeInput = document.getElementById('carType');
+        const carColorInput = document.getElementById('carColor');
+        const generateBtn = document.getElementById('generateBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const wallpaperBtn = document.getElementById('wallpaperBtn');
+        const wallpaperPreview = document.getElementById('wallpaperPreview');
+        const aiCarImage = document.getElementById('aiCarImage');
+        const loadingStatus = document.getElementById('loadingStatus');
+        const previewContent = document.getElementById('previewContent');
+
+        let currentGeneratedImage = null;
+
+        async function generateAICarImage() {
+            const carName = carNameInput.value.trim() || 'Dream Car';
+            const carType = carTypeInput.value;
+            const carColor = carColorInput.value;
+            
+            if (!carName) {
+                alert('Please enter a car name!');
+                return;
+            }
+
+            generateBtn.disabled = true;
+            loadingStatus.style.display = 'block';
+
+            try {
+                const colorName = getColorName(carColor);
+                const prompt = `A stunning ${colorName} ${carType} car named "${carName}", professional automotive photography, ultra-detailed, high quality, 4k, cinematic lighting, glossy paint, dynamic angle`;
+                
+                const response = await fetch(
+                    'https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-2-1',
+                    {
+                        headers: { Authorization: `Bearer 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` },
+                        method: 'POST',
+                        body: JSON.stringify({ inputs: prompt }),
+                    }
+                );
+
+                if (!response.ok) throw new Error(`API Error: ${response.status}`);
+
+                const result = await response.blob();
+                currentGeneratedImage = URL.createObjectURL(result);
+                
+                aiCarImage.src = currentGeneratedImage;
+                aiCarImage.style.display = 'block';
+                previewContent.style.display = 'none';
+                wallpaperPreview.style.background = 'transparent';
+                
+                downloadBtn.disabled = false;
+                wallpaperBtn.disabled = false;
+                loadingStatus.style.display = 'none';
+                
+            } catch (error) {
+                console.error('Error:', error);
+                generateBackupDesign(carName, carType, carColor);
+                downloadBtn.disabled = false;
+                wallpaperBtn.disabled = false;
+            }
+            
+            generateBtn.disabled = false;
+        }
+
+        function generateBackupDesign(carName, carType, carColor) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 1080;
+            canvas.height = 1920;
+            const ctx = canvas.getContext('2d');
+            
+            const gradient = ctx.createLinearGradient(0, 0, 1080, 1920);
+            gradient.addColorStop(0, carColor + '30');
+            gradient.addColorStop(0.5, '#1a1a2e');
+            gradient.addColorStop(1, '#0a0a1a');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 1080, 1920);
+            
+            ctx.font = 'bold 400px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('🏎️', 540, 800);
+            
+            ctx.font = 'bold 120px Arial';
+            ctx.fillStyle = carColor;
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.7)';
+            ctx.shadowBlur = 30;
+            ctx.fillText(carName, 540, 1150);
+            
+            ctx.font = '60px Arial';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+            ctx.fillText(carType.toUpperCase(), 540, 1250);
+            
+            currentGeneratedImage = canvas.toDataURL('image/png');
+            aiCarImage.src = currentGeneratedImage;
+            aiCarImage.style.display = 'block';
+            previewContent.style.display = 'none';
+            wallpaperPreview.style.background = 'transparent';
+        }
+
+        function getColorName(hex) {
+            const colors = {
+                '#ff0000': 'Red', '#00ff00': 'Green', '#0000ff': 'Blue',
+                '#ffff00': 'Yellow', '#ff8800': 'Orange', '#ff00ff': 'Magenta',
+                '#00ffff': 'Cyan', '#ffffff': 'White', '#000000': 'Black',
+            };
+            return colors[hex.toUpperCase()] || 'Custom colored';
+        }
+
+        function downloadWallpaper() {
+            if (!currentGeneratedImage) {
+                alert('Please generate an image first!');
+                return;
+            }
+            
+            const link = document.createElement('a');
+            link.href = currentGeneratedImage;
+            const carName = carNameInput.value.trim() || 'MyDreamCar';
+            link.download = `${carName}-wallpaper.png`;
+            link.click();
+        }
+
+        function setAsWallpaper() {
+            downloadWallpaper();
+            alert('✅ Image downloaded! Set it as your wallpaper from phone settings.');
+        }
+
+        generateBtn.addEventListener('click', generateAICarImage);
+        downloadBtn.addEventListener('click', downloadWallpaper);
+        wallpaperBtn.addEventListener('click', setAsWallpaper);
+    </script>
+</body>
+</html>
