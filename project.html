@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safi Courses | Learn Without Limits</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="project.css">
+</head>
+
+<body>
+
+<!-- Loading Screen -->
+<div class="loader">
+    <div></div>
+</div>
+
+<!-- Navbar -->
+<header>
+<nav class="navbar">
+
+    <div class="logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        Safi Courses
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#footer">Contact</a></li>
+    </ul>
+
+    <button class="explore-btn">Explore Courses</button>
+
+    <div class="nav-buttons">
+        <button id="theme-btn"><i class="fa-solid fa-moon"></i></button>
+        <a href="#" class="login">Login</a>
+        <a href="#" class="signup">Sign Up</a>
+        <button class="nav-toggle" id="nav-toggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+
+</nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+
+    <div class="hero-text" data-aos="fade-right">
+        <h1>Learn Skills.<br>Build Your Future.</h1>
+        <p>Safi Courses is a modern online learning platform where students learn programming, design, business and technology skills — write real code, take quizzes, and earn certificates, all in the browser.</p>
+        <div class="hero-btns">
+            <a href="#courses" class="primary">Explore Courses</a>
+            <a href="#courses" class="secondary">Watch Demo</a>
+        </div>
+    </div>
+
+    <div class="hero-card" data-aos="zoom-in">
+        <div class="glass-card">
+            <i class="fa-solid fa-laptop-code"></i>
+            <h3>100+ Courses</h3>
+            <p>Learn from professional instructors, then run your own code and earn a certificate.</p>
+        </div>
+    </div>
+
+    <section id="courses" class="courses">
+        <h2>Popular Courses</h2>
+        <div class="course-container">
+            <div class="course-card">
+                <i class="fa-brands fa-html5"></i>
+                <h3>HTML Course</h3>
+                <p>Learn HTML from beginner to advanced.</p>
+                <button class="course-cta" onclick="openCourse('html')">Start Course</button>
+            </div>
+            <div class="course-card">
+                <i class="fa-brands fa-css3-alt"></i>
+                <h3>CSS Course</h3>
+                <p>Master CSS and Responsive Design.</p>
+                <button class="course-cta" onclick="openCourse('css')">Start Course</button>
+            </div>
+            <div class="course-card">
+                <i class="fa-brands fa-js"></i>
+                <h3>JavaScript Course</h3>
+                <p>Learn JavaScript with projects.</p>
+                <button class="course-cta" onclick="openCourse('javascript')">Start Course</button>
+            </div>
+            <div class="course-card">
+                <i class="fa-brands fa-python"></i>
+                <h3>Python Course</h3>
+                <p>Complete Python Programming.</p>
+                <button class="course-cta" onclick="openCourse('python')">Start Course</button>
+            </div>
+        </div>
+    </section>
+
+</section>
+
+<!-- Featured Image Section -->
+<section class="featured-image-section">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlDmX2S9dy1WUSsNKHz7GsoCjNcboA-DMZpssJNLbQ2vRRtVuBKg2ux0w&s=10" alt="Students learning online">
+</section>
+
+<!-- Categories -->
+<section class="categories" id="categories">
+    <h2 data-aos="fade-up">Popular Categories</h2>
+    <div class="category-box">
+        <div class="category" data-category="programming" data-aos="fade-up" tabindex="0" role="button" aria-label="Open Programming courses"><i class="fa-solid fa-code"></i><h3>Programming</h3></div>
+        <div class="category" data-category="design" data-aos="fade-up" data-aos-delay="80" tabindex="0" role="button" aria-label="Open Design courses"><i class="fa-solid fa-palette"></i><h3>Design</h3></div>
+        <div class="category" data-category="business" data-aos="fade-up" data-aos-delay="160" tabindex="0" role="button" aria-label="Open Business courses"><i class="fa-solid fa-chart-line"></i><h3>Business</h3></div>
+        <div class="category" data-category="ai" data-aos="fade-up" data-aos-delay="240" tabindex="0" role="button" aria-label="Open AI Technology courses"><i class="fa-solid fa-robot"></i><h3>AI Technology</h3></div>
+    </div>
+</section>
+
+<!-- Featured Courses -->
+<section class="courses">
+    <h2>Featured Courses</h2>
+    <div class="course-container">
+
+        <div class="course-card" data-aos="fade-up">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyvErr0qMRlBxdnmW3zq_ZIOANBvvKS5bX7ZQQumDPeA&s=10" alt="Web development">
+            <h3>Web Development</h3>
+            <p>HTML CSS JavaScript Complete Course</p>
+            <button class="course-cta" onclick="openCourse('webdev')">View Course</button>
+        </div>
+
+        <div class="course-card" data-aos="fade-up" data-aos-delay="80">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj7kMBzs4jKatrvdU7Ctrm6qxytjorEaCuqDNgAbpQrA&s=10" alt="Python programming">
+            <h3>Python Programming</h3>
+            <p>Learn Python from Beginner to Advanced</p>
+            <button class="course-cta" onclick="openCourse('python')">View Course</button>
+        </div>
+
+        <div class="course-card" data-aos="fade-up" data-aos-delay="160">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRREzp-gnTahtdvRFZJJWokjGXnxuxIh-3s86imEoeFMwo6U5gGIRJar9SP&s=10" alt="Artificial intelligence">
+            <h3>Artificial Intelligence</h3>
+            <p>Master Modern AI Technologies</p>
+            <button class="course-cta" onclick="openCourse('ai')">View Course</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer">
+    <h2>Safi Courses</h2>
+    <p>Learn today, lead tomorrow.</p>
+    <div class="social">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-github"></i>
+    </div>
+    <p>© 2026 Safi Courses. All Rights Reserved.</p>
+</footer>
+
+<!-- =========================================================
+     COURSE WORKSPACE (Lessons / Code / Quiz / Certificate)
+     ========================================================= -->
+<div class="workspace-overlay" id="workspaceOverlay">
+  <div class="workspace">
+    <div class="workspace-header">
+      <i class="fa-brands fa-html5 course-icon" id="wsIcon"></i>
+      <div class="ws-title">
+        <h2 id="wsTitle">Course title</h2>
+        <p id="wsMeta">Level • Duration</p>
+      </div>
+      <button class="ws-close" onclick="closeWorkspace()">&times;</button>
+    </div>
+
+    <div class="ws-tabs">
+      <button class="ws-tab active" data-tab="lessons" onclick="switchTab('lessons')"><i class="fa-solid fa-book"></i>Lessons</button>
+      <button class="ws-tab" data-tab="code" onclick="switchTab('code')"><i class="fa-solid fa-code"></i>Code Editor</button>
+      <button class="ws-tab" data-tab="quiz" onclick="switchTab('quiz')"><i class="fa-solid fa-circle-question"></i>Quiz</button>
+      <button class="ws-tab" data-tab="certificate" onclick="switchTab('certificate')"><i class="fa-solid fa-award"></i>Certificate</button>
+    </div>
+
+    <div class="ws-body">
+      <div class="ws-panel active" data-panel="lessons" id="panelLessons"></div>
+      <div class="ws-panel" data-panel="code" id="panelCode"></div>
+      <div class="ws-panel" data-panel="quiz" id="panelQuiz"></div>
+      <div class="ws-panel" data-panel="certificate" id="panelCertificate"></div>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     AI ASSISTANT WIDGET
+     ========================================================= -->
+<button class="ai-toggle" onclick="aiToggle()" aria-label="Open Safi Assistant">
+  <i class="fa-solid fa-comment-dots"></i>
+  <span class="ping"></span>
+</button>
+
+<div class="ai-panel" id="aiPanel">
+  <div class="ai-head">
+    <i class="fa-solid fa-robot"></i>
+    <div>
+      <strong>Safi Assistant</strong>
+      <span>Instant answers about courses</span>
+    </div>
+  </div>
+  <div class="ai-messages" id="aiMessages">
+    <div class="ai-msg bot">Assalam-o-Alaikum! Main Safi Assistant hoon. Courses, quiz, code editor ya certificate ke baare mein pooch lein.</div>
+  </div>
+  <div class="ai-chips">
+    <button class="ai-chip" onclick="aiAsk('Certificate kaise milta hai?')">Certificate?</button>
+    <button class="ai-chip" onclick="aiAsk('Code editor kaise use karein?')">Code editor?</button>
+    <button class="ai-chip" onclick="aiAsk('Quiz ke baare mein batao')">Quiz?</button>
+  </div>
+  <div class="ai-input-row">
+    <input type="text" id="aiInput" placeholder="Apna sawal likhein...">
+    <button class="ai-send" onclick="aiAsk()"><i class="fa-solid fa-paper-plane"></i></button>
+  </div>
+</div>
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Main JS -->
+<script src="project.js" defer></script>
+
+</body>
+</html>
